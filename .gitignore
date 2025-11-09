@@ -1,0 +1,85 @@
+# Build directories
+build/
+*/build/
+Debug/
+Release/
+x64/
+x86/
+*.pro.user
+*.pro.user.*
+*.autosave
+
+# Compiled object files
+*.o
+*.obj
+*.ko
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Compiled dynamic libraries
+*.so
+*.dylib
+*.dll
+*.framework
+
+# Executables
+*.exe
+*.app
+appCGG_PW_3
+
+# Qt specific
+moc_*
+qrc_*
+ui_*
+*.qm
+*.qrc
+.ts
+.translation
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# IDE
+.vscode/
+.idea/
+*.cbp
+*.cproject
+*.project
+*.workspace
+*.sln
+*.suo
+*.vcxproj*
+*.vc.db
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+*.tlog
+
+# macOS bundle
+*.dmg
+*.app/Contents/_CodeSignature
+*.app/Contents/Resources/*.lproj
