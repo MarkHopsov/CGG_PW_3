@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Используем необходимые компоненты для OpenGL вместо Quick
 find_package(Qt6 REQUIRED COMPONENTS Core OpenGL Widgets)
 
+# Ищем GLM
+find_package(glm REQUIRED)
+
 qt_standard_project_setup(REQUIRES 6.8)
 
 # Для macOS: настройки OpenGL
@@ -23,14 +26,11 @@ qt_add_executable(appCGG_PW_3
     OpenGLWindow.h
 )
 
-# Копируем шейдеры в build directory (важно для macOS)
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 set_target_properties(appCGG_PW_3 PROPERTIES
-#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appCGG_PW_3
+    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.appCGG_PW_3
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
@@ -43,6 +43,7 @@ target_link_libraries(appCGG_PW_3
         Qt6::Core
         Qt6::OpenGL
         Qt6::Widgets
+        glm::glm
 )
 
 # Для macOS: линкуем системную библиотеку OpenGL
